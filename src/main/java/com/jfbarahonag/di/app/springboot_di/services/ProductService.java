@@ -13,10 +13,10 @@ public class ProductService {
     return repository.findAll().stream()
         .map(product -> {
           Double newPrice = product.getPrice() * 1.25d;
-          Product updatedProduct = new Product(
-              product.getId(),
-              product.getName().toUpperCase(),
-              newPrice.longValue());
+          String newName = product.getName().toUpperCase();
+          Product updatedProduct = (Product) product.clone();
+          updatedProduct.setPrice(newPrice.longValue());
+          updatedProduct.setName(newName);
           return updatedProduct;
         })
         .toList();
