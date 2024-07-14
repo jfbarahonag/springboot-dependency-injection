@@ -2,6 +2,7 @@ package com.jfbarahonag.di.app.springboot_di.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.jfbarahonag.di.app.springboot_di.models.Product;
@@ -12,7 +13,7 @@ public class ProductServiceImpl implements ProductService {
 
   private ProductRepository repository;
   
-  public ProductServiceImpl(ProductRepository repository) {
+  public ProductServiceImpl(@Qualifier("productRepositoryImpl") ProductRepository repository) {
     this.repository = repository;
   }
   
