@@ -2,6 +2,7 @@ package com.jfbarahonag.di.app.springboot_di.services;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +12,9 @@ import com.jfbarahonag.di.app.springboot_di.repositories.ProductRepository;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+  @Autowired
+  @Qualifier("inFileData")
   private ProductRepository repository;
-  
-  public ProductServiceImpl(@Qualifier("inFileData") ProductRepository repository) {
-    this.repository = repository;
-  }
   
   @Override
   public List<Product> findAll() {
