@@ -11,9 +11,13 @@ import com.jfbarahonag.di.app.springboot_di.repositories.ProductRepository;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-  @Autowired
   private ProductRepository repository;
-
+  
+  @Autowired
+  public void setRepository(ProductRepository repository) {
+    this.repository = repository;
+  }
+  
   @Override
   public List<Product> findAll() {
     return repository.findAll().stream()
