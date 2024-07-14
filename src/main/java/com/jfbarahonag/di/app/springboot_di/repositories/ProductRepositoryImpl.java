@@ -5,10 +5,10 @@ import java.util.List;
 
 import com.jfbarahonag.di.app.springboot_di.models.Product;
 
-public class ProductRepository {
+public class ProductRepositoryImpl {
   private List<Product> data;
 
-  public ProductRepository() {
+  public ProductRepositoryImpl() {
     data = Arrays.asList(
         // default values
         new Product(1L, "Vela x10gr", 5500L),

@@ -3,11 +3,11 @@ package com.jfbarahonag.di.app.springboot_di.services;
 import java.util.List;
 
 import com.jfbarahonag.di.app.springboot_di.models.Product;
-import com.jfbarahonag.di.app.springboot_di.repositories.ProductRepository;
+import com.jfbarahonag.di.app.springboot_di.repositories.ProductRepositoryImpl;
 
-public class ProductService {
+public class ProductServiceImpl {
 
-  private ProductRepository repository = new ProductRepository();
+  private ProductRepositoryImpl repository = new ProductRepositoryImpl();
 
   public List<Product> findAll() {
     return repository.findAll().stream()
