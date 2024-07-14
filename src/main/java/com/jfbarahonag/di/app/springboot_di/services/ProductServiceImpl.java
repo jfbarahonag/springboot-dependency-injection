@@ -5,10 +5,11 @@ import java.util.List;
 import com.jfbarahonag.di.app.springboot_di.models.Product;
 import com.jfbarahonag.di.app.springboot_di.repositories.ProductRepositoryImpl;
 
-public class ProductServiceImpl {
+public class ProductServiceImpl implements ProductService {
 
   private ProductRepositoryImpl repository = new ProductRepositoryImpl();
 
+  @Override
   public List<Product> findAll() {
     return repository.findAll().stream()
         .map(product -> {
@@ -22,6 +23,7 @@ public class ProductServiceImpl {
         .toList();
   }
 
+  @Override
   public Product findById(Long id) {
     return repository.findById(id);
   }
