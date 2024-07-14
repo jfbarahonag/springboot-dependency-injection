@@ -13,7 +13,7 @@ public class ProductServiceImpl implements ProductService {
 
   private ProductRepository repository;
   
-  public ProductServiceImpl(@Qualifier("inMemoryData") ProductRepository repository) {
+  public ProductServiceImpl(@Qualifier("inFileData") ProductRepository repository) {
     this.repository = repository;
   }
   

@@ -4,15 +4,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfbarahonag.di.app.springboot_di.models.Product;
 
-@Repository
-@Primary
+@Repository("inFileData")
 public class ProductRepositoryJson implements ProductRepository {
 
   private List<Product> data;
