@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.jfbarahonag.di.app.springboot_di.models.Product;
 
-@Repository
+@Repository("inMemoryData")
 public class ProductRepositoryImpl implements ProductRepository {
   private List<Product> data;
 
