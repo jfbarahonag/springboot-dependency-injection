@@ -2,7 +2,6 @@ package com.jfbarahonag.di.app.springboot_di.services;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.jfbarahonag.di.app.springboot_di.models.Product;
@@ -13,8 +12,7 @@ public class ProductServiceImpl implements ProductService {
 
   private ProductRepository repository;
   
-  @Autowired
-  public void setRepository(ProductRepository repository) {
+  public ProductServiceImpl(ProductRepository repository) {
     this.repository = repository;
   }
   
