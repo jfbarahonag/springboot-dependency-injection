@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "PC gaming",
+    "price": 1100000
+  },
+  {
+    "id": 2,
+    "name": "Teclado mecanico",
+    "price": 500000
+  },
+  {
+    "id": 3,
+    "name": "Silla ergonomica",
+    "price": 1200000
+  }
+]
