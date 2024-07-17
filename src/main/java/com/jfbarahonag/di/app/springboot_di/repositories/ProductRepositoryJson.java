@@ -6,12 +6,10 @@ import java.util.List;
 
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
-import org.springframework.stereotype.Repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfbarahonag.di.app.springboot_di.models.Product;
 
-@Repository("inFileData")
 public class ProductRepositoryJson implements ProductRepository {
 
   private List<Product> data;
