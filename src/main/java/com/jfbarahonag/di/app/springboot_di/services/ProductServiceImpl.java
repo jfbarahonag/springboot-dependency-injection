@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.jfbarahonag.di.app.springboot_di.models.Product;
@@ -15,12 +16,15 @@ public class ProductServiceImpl implements ProductService {
   @Autowired
   @Qualifier("inFileData")
   private ProductRepository repository;
+
+  @Value("${config.price.taxValue}")
+  private double taxValue;
   
   @Override
   public List<Product> findAll() {
     return repository.findAll().stream()
         .map(product -> {
-          Double newPrice = product.getPrice() * 1.25d;
+          Double newPrice = product.getPrice() * taxValue;
           String newName = product.getName().toUpperCase();
           Product updatedProduct = (Product) product.clone();
           updatedProduct.setPrice(newPrice.longValue());
